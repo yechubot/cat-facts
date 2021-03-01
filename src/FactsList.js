@@ -3,8 +3,8 @@ const FactsList = ({facts}) => {
 
     <div className="facts-list">
     
-        {facts.map((fact)=> (
-          <div className="fact-preview" key={facts._id}>
+        {facts.map((fact, index)=> (
+          <div className="fact-preview" key={index}>
            <p>{fact.text}</p>
           </div>
         ))}
