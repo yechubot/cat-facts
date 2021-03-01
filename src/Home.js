@@ -1,33 +1,9 @@
-import { useEffect, useState } from "react";
+import useFetch from "./useFetch";
 import FactsList from "./FactsList";
 
 const Home = () => {
 
-  const [facts,setFacts] = useState(null);
-  const [loading,setLoading] = useState(true);
-  const [error,setError] = useState(false); 
-
-  useEffect(()=> {
-    fetch("https://cat-fact.herokuapp.com/facts")
-    .then(res => {
-      
-      if(!res.ok){
-        throw Error("could not fetch the data :'(");
-      }
-      return res.json() 
-    })
-
-    .then((data)=> {
-      setFacts(data);
-      setLoading(false)
-      setError(null)
-    })
-
-    .catch(err => {
-      setError(err.message);
-      setLoading(false);
-    })
-  },[])
+const {data:facts, loading, error} = useFetch("https://cat-fact.herokuapp.com/facts");
 
   return (
     <div className="home">
