@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="nav-lists">
         <Link to="/">Home</Link>
         <a href="https://alexwohlbruck.github.io/cat-facts/docs/">API</a>
-        <Link to="/add">Add </Link>
+        <Link to="/add">Add</Link>
       </div>
 
     </div>
